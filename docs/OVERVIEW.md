@@ -359,12 +359,12 @@ matter are the ones the underlying toolkit consumes:
 | Variable | Effect |
 | --- | --- |
 | `XDG_CONFIG_HOME` | Relocates `settings.ini` (via `g_get_user_config_dir()`); the file moves to `$XDG_CONFIG_HOME/mdview/settings.ini`. |
-| `XDG_DATA_HOME` | Relocates the installed `.desktop` file and icon when `PREFIX` is not overridden, because `make install` writes under `$HOME/.local` which XDG uses. |
+| `XDG_DATA_HOME` | Not read by mdview or by its Makefile. `make install` always writes under `$PREFIX/share` (default `$HOME/.local/share`), so pointing `XDG_DATA_HOME` elsewhere would send the desktop environment looking in the wrong place — set `PREFIX` explicitly instead. |
 | `HOME` | Used for the `~` abbreviation in the header-bar subtitle and as the fallback sidebar folder. |
 | `GDK_BACKEND` | Selects the GTK backend (for example `broadway` for headless use). Not required for normal desktop use. |
 | `BROADWAY_DISPLAY` | Broadway display number, used with `GDK_BACKEND=broadway`. |
 | `DISPLAY` / `WAYLAND_DISPLAY` | Standard display selection, read by GTK/GDK. |
-| `WEBKIT_DISABLE_COMPOSITING_MODE`, `WEBKIT_FORCE_SANDBOX` | Standard WebKitGTK tuning variables, read by the library rather than by mdview. |
+| `WEBKIT_DISABLE_COMPOSITING_MODE`, `WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS` | WebKitGTK tuning variables, read by the library rather than by mdview. |
 
 ### Other constants
 
