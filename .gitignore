@@ -1,0 +1,5 @@
+*.o
+mdview
+tests/outline_test
+tests/render_test
+tests/js_markup_probe

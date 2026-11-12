@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Markdown Viewer
+GenericName=Markdown Viewer
+Comment=Distraction-free viewer for Markdown files
+Exec=mdview %U
+Icon=text-markdown
+Terminal=false
+Categories=Utility;Viewer;
+MimeType=text/markdown;text/x-markdown;
+StartupNotify=true
